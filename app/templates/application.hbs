@@ -1,5 +1,9 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
 
+<h2>Log Dashboard</h2>
+
+<nav>
+  {{#link-to "health"}}Health{{/link-to}}
+  {{#link-to "env"}}Environment{{/link-to}}
+  {{#link-to "metric"}}Metrics{{/link-to}}
+</nav>
 {{outlet}}

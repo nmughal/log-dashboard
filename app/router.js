@@ -7,6 +7,9 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('health');
+  this.route('env');
+  this.route('metric', { path: '/metrics' });
 });
 
 export default Router;
