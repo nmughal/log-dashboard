@@ -1,9 +1,9 @@
 
 <h2>Log Dashboard</h2>
 
-<nav>
-  {{#link-to "health"}}Health{{/link-to}}
-  {{#link-to "env"}}Environment{{/link-to}}
-  {{#link-to "metric"}}Metrics{{/link-to}}
-</nav>
+{{#bs-nav pills=pills justified=justified as |nav|}}
+  {{#nav.item}}{{#nav.link-to "health"}}Health{{/nav.link-to}}{{/nav.item}}
+  {{#nav.item}}{{#nav.link-to "env"}}Environment{{/nav.link-to}}{{/nav.item}}
+  {{#nav.item}}{{#nav.link-to "metric"}}Metrics{{/nav.link-to}}{{/nav.item}}
+{{/bs-nav}}
 {{outlet}}
