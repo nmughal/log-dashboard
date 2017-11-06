@@ -22,7 +22,3 @@ export default DS.JSONAPISerializer.extend({
     }
 });
 
-// path: DS.attr(),
-// nLSPath: DS.attr(),
-// term: DS.attr(),
-// pwd: DS.attr()
