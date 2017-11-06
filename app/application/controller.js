@@ -29,5 +29,5 @@ export default Controller.extend({
 
 function changeUrlValue(url) {
     this.set('host', url);
-    this.setHost(host);
+    this.setHost(url);
 }
