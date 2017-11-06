@@ -14,6 +14,7 @@ const App = Application.extend({
 
 const inflector = Inflector.inflector;
 inflector.irregular('env', 'env');
+inflector.irregular('health', 'health');
 loadInitializers(App, config.modulePrefix);
 
 export default App;

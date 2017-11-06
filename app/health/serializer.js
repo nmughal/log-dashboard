@@ -40,7 +40,7 @@ export default DS.JSONAPISerializer.extend({
 
         let serializedPayload = {
             data: {
-                type: 'healths',
+                type: 'health',
                 id: '1',
                 attributes: {
                     'status': payload.status,
