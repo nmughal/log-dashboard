@@ -1,6 +1,9 @@
 
 <h2>Log Dashboard</h2>
 
+<div>
+  {{input value=fullUrl key-up=(action 'changeUrl') }}
+</div>
 <nav>
   {{#link-to "health"}}Health{{/link-to}}
   {{#link-to "env"}}Environment{{/link-to}}
