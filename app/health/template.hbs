@@ -1,9 +1,8 @@
-<div class = "healthmodule">
+<h2>Health</h2>
 
-  <h2>Health</h2>
-
+  {{#each model as |health|}}
   <div class="data">
-    <strong>Status:</strong>
+    <strong>Status:</strong> {{health.status}}
   </div>
 
   <div class="data">
@@ -11,14 +10,15 @@
   </div>
 
   <div class="data">
-    <strong>Total:</strong>
+    <strong>Total:</strong> {{health.total}}
   </div>
 
   <div class="data">
-    <strong>Free: </strong>
+    <strong>Free: </strong> {{health.free}}
   </div>
 
   <div class="data">
     <strong>Threshold: </strong>
   </div>
-</div>
+
+{{/each}}
