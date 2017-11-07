@@ -1,11 +1,22 @@
-<h2>Log Dashboard</h2>
 
-<div>
-  {{input class="form-control input-lg" value=fullUrl key-up=(action 'changeUrl') }}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Log Dashboard</h2>
+
+
+      <div>
+        {{input class="form-control input-lg" value=fullUrl key-up=(action 'changeUrl') }}
+      </div>
+      {{#bs-nav type="pills" justified=true as |nav|}}
+        {{#nav.item}}{{#nav.link-to "health"}}Health{{/nav.link-to}}{{/nav.item}}
+        {{#nav.item}}{{#nav.link-to "env"}}Environment{{/nav.link-to}}{{/nav.item}}
+        {{#nav.item}}{{#nav.link-to "metric"}}Metrics{{/nav.link-to}}{{/nav.item}}
+      {{/bs-nav}}
+      {{outlet}}
+
+    </div>
+  </div>
+
 </div>
-{{#bs-nav type="pills" justified=true as |nav|}}
-  {{#nav.item}}{{#nav.link-to "health"}}Health{{/nav.link-to}}{{/nav.item}}
-  {{#nav.item}}{{#nav.link-to "env"}}Environment{{/nav.link-to}}{{/nav.item}}
-  {{#nav.item}}{{#nav.link-to "metric"}}Metrics{{/nav.link-to}}{{/nav.item}}
-{{/bs-nav}}
-{{outlet}}
+
