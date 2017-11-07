@@ -1,18 +1,5 @@
 
 <h2>Metric</h2>
-<div>
-    <span>Memory:</span>&nbsp;<span>{{model.memory }}</span>
-</div>
-<div>
-    <span>Memory Free:</span>&nbsp;<span>{{model.memoryFree }}</span>
-</div>
-<div>
-    <span>Theads:</span>&nbsp;<span>{{model.threads }}</span>
-</div>
-<div>
-    <span>Threads Peak:</span>&nbsp;<span>{{model.threadsPeak }}</span>
-</div>
-<div>
-    <span>Threads Daemon:</span>&nbsp;<span>{{model.threadsDaemon }}</span>
-</div>
 
+{{#metric-display metric=model }}
+{{/metric-display}}
