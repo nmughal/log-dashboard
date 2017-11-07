@@ -1,7 +1,7 @@
 <h2>Log Dashboard</h2>
 
 <div>
-  {{input value=fullUrl key-up=(action 'changeUrl') }}
+  {{input class="form-control input-lg" value=fullUrl key-up=(action 'changeUrl') }}
 </div>
 {{#bs-nav type="pills" justified=true as |nav|}}
   {{#nav.item}}{{#nav.link-to "health"}}Health{{/nav.link-to}}{{/nav.item}}
