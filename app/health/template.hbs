@@ -1,9 +1,7 @@
-Health
+<h2>Health</h2>
 
-<div>
-    <span>Status:</span>&nbsp;<span>{{model.status}}</span>
+{{#health-diskspace-display diskSpace=model.diskSpace}}
+{{/health-diskspace-display}}
 
-    <h2>Disk Space</h2>
-    <span>Status:</span>&nbsp;<span>{{model.diskSpace.status }}</span>
-    {{model.diskSpace.totalBytes }}
-</div>
+{{#health-elasticsearch-display elasticSearch=model.diskSpace}}
+{{/health-elasticsearch-display}}
