@@ -4,6 +4,7 @@ import Controller from '@ember/controller';
 
 export default Controller.extend({
     host: 'http://107.21.177.120:8080/stock-service',
+    previousTransition: null,
 
     init() {
         this.setHost(this.host);
@@ -30,4 +31,13 @@ export default Controller.extend({
 function changeUrlValue(url) {
     this.set('host', url);
     this.setHost(url);
+    let routeName = this.currentRouteName;
+
+    if(!!this.previousTransition){
+        this.previousTransition.retry();
+        this.set('previousTransition', null);
+        return;
+    }
+
+    this.send('triggerRefresh');
 }
