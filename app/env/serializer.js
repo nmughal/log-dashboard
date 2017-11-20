@@ -2,8 +2,6 @@ import DS from 'ember-data';
 
 export default DS.JSONAPISerializer.extend({
     normalizeQueryRecordResponse(store, primaryModelClass, payload, id, requestType) {
-        let diskSpace = payload.diskSpace;
-        let elasticSearch = payload.elasticsearch;
 
         let serializedPayload = {
             data: {
