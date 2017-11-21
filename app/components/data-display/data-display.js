@@ -12,16 +12,20 @@ DataDisplay.createData = function(dataModel, fields){
 
 export default DataDisplay;
 
-function mapField(dataModel, field, index, array) {
-    if(field.constructor === String) {
-        return { key: field, value: dataModel.get(field) };
-    }
-    else if(field.constructor === Array){
+function mapField(dataModel, fieldObj, index, array) {
+    if(fieldObj.constructor === Array){
         throw('DataDisplay field cannot be an Array');
     }
 
-    let key = Object.keys(field)[0];
-    let value = field[key];
-    return { key, value: value.map(_.partial(mapField, dataModel.get(key))) };
+    if(fieldObj.field && fieldObj.field.constructor === String) {
+        return { value: dataModel.get(fieldObj.field), title: fieldObj.title };
+    }
+    
+    let notFieldSectionKeys = ['title'];
+    let keys = Object.keys(fieldObj);
+    let sectionKey = keys.filter((key) => notFieldSectionKeys.indexOf(key) === -1)[0];
+    let fields = fieldObj[sectionKey];
+
+    return { title: fieldObj.title, value: fields.map(_.partial(mapField, dataModel.get(sectionKey))) };
 
 }
