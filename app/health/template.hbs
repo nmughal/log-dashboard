@@ -1,7 +1,6 @@
 <h2>Health</h2>
 
-{{#health-diskspace-display diskSpace=model.diskSpace}}
-{{/health-diskspace-display}}
-
-{{#health-elasticsearch-display elasticSearch=model.elasticSearch}}
-{{/health-elasticsearch-display}}
+{{#each model.data as |modelData|}}
+    {{#data-display data=modelData.value title=modelData.key }}
+    {{/data-display}}
+{{/each}}
